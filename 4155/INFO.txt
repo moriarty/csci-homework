@@ -1,0 +1,6 @@
+COURSE INFO:
+
+Title: Machine Learning & Robotics
+Prof: Thomas Trappenberg
+
+Email: tt@cs.dal.ca
