@@ -3,22 +3,21 @@ from pylab import *
 from mpl_toolkits.mplot3d import Axes3D
 
 SIGMA = array([[1, 0.5],[0.5,1]])
+MU = array([[1],[2]])
 
 
+X,Y = mgrid[-2:4:.1, -2:4:.1]
 
-X,Y = mgrid[-4:4:.1, -4:4:.1]
-mu = X.mean(axis=0)
-
+x = array([[X],[Y]])
 
 part1 = ((linalg.det(2*pi*SIGMA))**(-0.5))
-print part1
 
-#part2 = (X-mu).conj().transpose()*linalg.inv(SIGMA)*(X-mu)
+part2 = (-0.5)*(x-MU).conj().transpose()*linalg.inv(SIGMA)*(x-MU)
 
-print part2
+ part2
 
 part3 = exp(-0.5*part2)
-print part3
+part3
 
 Z=part1*part3
 
