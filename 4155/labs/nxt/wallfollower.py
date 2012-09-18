@@ -49,6 +49,9 @@ def wallfollower(TIME_LIMIT):
 	out = a*p + b*i + c*d
         drive(p_right, p_left)
 
+def controller(p,i,d,kp=_KP,ki=_KI,kd=_KD):
+    update = p*kp + i*ki + d*kd
+    return update
 
 def avoid_walls():
     start = time()
