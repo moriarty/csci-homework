@@ -34,20 +34,12 @@ def wallfollower(TIME_LIMIT):
     e_prev = 0
     while time() - start < TIME_LIMIT:
         e = DIST - u_val
-        
-        ## if too close, increase right power
-        '''
-	if e > 5:
-            # catch error later
-            p_right = p_right + 1
-            p_left = p_left -1
-        else if e < -5:
-            p_left = p_left +1 
-            p_right = p_right -1
-	'''
-
-	out = a*p + b*i + c*d
+        e_diff = e-e_prev
+	update = controller(e,e_sum,e_diff)
+	p_right = START_POWER - update
+	p_left = START_POWER + update
         drive(p_right, p_left)
+	e_prev = e
 
 def controller(p,i,d,kp=_KP,ki=_KI,kd=_KD):
     update = p*kp + i*ki + d*kd
