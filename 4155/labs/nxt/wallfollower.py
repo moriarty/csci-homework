@@ -7,9 +7,12 @@ Created on Tue Sep 18 17:13:52 2012
 
 ## Desired Distance
 DIST = 25
-TIME_LIMIT = 60
+TIME_LIMIT = 15
 TURN_TIME = 2
-START_POWER = 90
+START_POWER = 80
+_KP = 0.5
+_KI = 0
+_KD = 0.25
 
 from nxt.locator import *
 from nxt.motor import *
@@ -23,45 +26,64 @@ m_right = Motor(b, PORT_B)
 m_left = Motor(b, PORT_C)
 m_left.brake()
 m_right.brake()
+_N = 10
 
 def wallfollower(TIME_LIMIT):
     start = time()
     
-    u_val = u.get_sample()
+    e_last = 0
     p_left = START_POWER
     p_right = START_POWER
     e_sum = 0
     e_prev = 0
+    e_diff = 0
+    c = 0
     while time() - start < TIME_LIMIT:
-        e = DIST - u_val
-        e_diff = e-e_prev
-	update = controller(e,e_sum,e_diff)
-	p_right = START_POWER - update
-	p_left = START_POWER + update
+        u_val = u.get_sample()   
+        e = u_val - DIST        
+        if c % _N == 0:
+            e_diff = e - e_last
+            e_last = e
+        if t.is_pressed():
+            stop_all()
+            return
+        #e_diff = e-e_prev
+        e_sum = e_sum + e
+        update = controller(e,e_sum,e_diff)
+        #print "u: ",update
+        p_right = START_POWER + update
+        p_left = START_POWER - update
+        #print "dist: ",u_val,"\te: ",e        
+        print_status(e,e_sum,e_diff, update, u_val, start)        
         drive(p_right, p_left)
-	e_prev = e
+        #e_prev = e
+        
+        '''
+        (wheelbase/2 + dist + _MARGIN ) / (dist + _MARGIN - _Wheelbase/2)
+        '''
+        
+def print_status(p, i, d, update, u_val, start):
+        print "p: ",p*_KP,"\ti: ",i*_KI,"\td: ",d*_KD
+        print "update: ",update
+        print "dist: ",u_val,"\te: ",p
+        tr = time() - start
+        print "time remaining: ",tr
 
 def controller(p,i,d,kp=_KP,ki=_KI,kd=_KD):
     update = p*kp + i*ki + d*kd
     return update
-
-def avoid_walls():
-    start = time()
-    while time() - start < TIME_LIMIT:
-        #Check Ultrasonic Sensor
-        u_val = u.get_sample()        
-        t_val = t.get_sample()
-
-        if t_val:
-            stop_all()
-            exit()
-        elif u_val < 20:
-            turn_left()
-        else:
-            drive_forward()
-    stop_all()
             
-def drive(r = 80,l = 80)
+def drive(r = 80,l = 80):
+        
+    if r > 100:
+        r = 100
+    elif r < 0:
+        r = 0
+    if l > 100:
+        l = 100
+    elif l < 0:
+        l = 0
+    print "right: ",r,"\tleft: ",l
     m_right.run(r)
     m_left.run(l)    
 
@@ -79,6 +101,8 @@ def stop_all():
 
 if __name__ == "__main__":
 
-    avoid_walls()    
-    
+    wallfollower(TIME_LIMIT)    
+
+    stop_all()
+    print "I quit."    
     exit()
