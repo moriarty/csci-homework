@@ -10,9 +10,9 @@ DIST = 25
 TIME_LIMIT = 20
 TURN_TIME = 2
 START_POWER = 70
-_KP = 1
-_KI = 0
-_KD = 0.25
+_KP = 0.25 #0.5
+_KI = 0.001   #1
+_KD = 1.0
 
 import math as mth
 from nxt.locator import *
@@ -21,8 +21,8 @@ from nxt.sensor import *
 from time import *
 
 b = find_one_brick()
-t = Touch(b, PORT_3)
-u = Ultrasonic(b, PORT_1)
+t = Touch(b, PORT_1)
+u = Ultrasonic(b, PORT_4)
 m_right = Motor(b, PORT_B)
 m_left = Motor(b, PORT_C)
 m_left.brake()
@@ -30,6 +30,7 @@ m_right.brake()
 _N = 10
 _WB = 10
 _MARG = 10
+e_prev =u.get_sample()
 
 def wallfollower(TIME_LIMIT):
     start = time()
@@ -46,13 +47,13 @@ def wallfollower(TIME_LIMIT):
         e = u_val - DIST
         print "uval: ",u_val,"\tdist: ",DIST        
         #e = mth.log((u_val+1.0)/DIST)        
-        if c % _N == 0:
-            e_diff = e - e_last
-            e_last = e
+        #if c % _N == 0:
+        #    e_diff = e - e_last
+        #e_last = e
         if t.is_pressed():
             stop_all()
             return
-        #e_diff = e-e_prev
+        e_diff = e-e_prev
         e_sum = e_sum + e
         update = controller(e,e_sum,e_diff)
         #upmax = get_upmax(u_val)
@@ -64,7 +65,7 @@ def wallfollower(TIME_LIMIT):
         #print "dist: ",u_val,"\te: ",e        
         print_status(e,e_sum,e_diff, update, u_val, start)        
         drive(p_right, p_left)
-        #e_prev = e
+        e_prev = e
         
         '''
         (wheelbase/2 + u_val + _MARGIN ) / (u_val + _MARGIN - _Wheelbase/2) = 
@@ -90,12 +91,12 @@ def drive(r = 80,l = 80):
         
     if r > 100:
         r = 100
-    elif r < 0:
-        r = 0
+    elif r < 30:
+        r = 30
     if l > 100:
         l = 100
-    elif l < 0:
-        l = 0
+    elif l < 30:
+        l = 30
     print "right: ",r,"\tleft: ",l
     m_right.run(r)
     m_left.run(l)    
