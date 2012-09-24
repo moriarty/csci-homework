@@ -1,0 +1,26 @@
+\documentclass[12pt]{article}
+\usepackage{url,graphicx,tabularx,array,geometry}
+\setlength{\parskip}{1ex} %--skip lines between paragraphs
+\setlength{\parindent}{0pt} %--don't indent paragraphs
+
+%-- Commands for header
+\renewcommand{\title}[1]{\textbf{#1}\\}
+\renewcommand{\line}{\begin{tabularx}{\textwidth}{X>{\raggedleft}X}\hline\\\end{tabularx}\\[-0.5cm]}
+\newcommand{\leftright}[2]{\begin{tabularx}{\textwidth}{X>{\raggedleft}X}#1%
+& #2\\\end{tabularx}\\[-0.5cm]}
+
+%\linespread{2} %-- Uncomment for Double Space
+\begin{document}
+
+\title{CSCI 3110: Assignment 1}
+\line
+\leftright{\today}{Alex Moriarty} %-- left and right positions in the header
+\leftright{}{B00317947}
+
+%\section{Numbered section}
+%\textbf{Section in bold font no number}
+
+\pagenumbering{empty}
+%\input{q1}
+
+\end{document}
