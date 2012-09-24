@@ -1,0 +1,11 @@
+roscd youbot_common
+rosrun tf bullet_migration_sed.py
+
+sudo apt-get install ros-fuerte-cob-common
+sudo apt-get install ros-fuerte-pr2-controllers
+sudo apt-get install ros-fuerte-joystick-drivers
+sudo apt-get install ros-fuerte-pr2-apps
+
+rosmake youbot_description
+rosmake youbot_common
+
