@@ -20,7 +20,8 @@ s_touch = Touch(b, PORT_1)
 
 X, Y = mgrid[0:360:1,0:360:1]
 Z = zeros_like(X)
-Value = []
+myX = []
+myY = []
 
 def measure_angles():
     start = time()
@@ -33,8 +34,9 @@ def measure_angles():
 def get_values():
     v1 = m_1.get_tacho().tacho_count % 360
     v2 = m_2.get_tacho().tacho_count % 360
-    Z[v1][v2] = 1
-    
+    '''Z[v1][v2] = 1'''
+    myX.append(v1)
+    myY.append(v2)
 
     
 if __name__=="__main__":
@@ -44,6 +46,8 @@ if __name__=="__main__":
     measure_angles()
     print "Plotting"
     print "this is slow... "
+
+    '''
     fig = plt.figure()
     ax = fig.gca(projection='3d')
     surf = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=cm.jet, linewidth=0, antialiased=False)
@@ -52,14 +56,17 @@ if __name__=="__main__":
     ax.zaxis.set_major_formatter(FormatStrFormatter('%.02f'))
     plt.show()
     '''
+    plot(myX,myY)
+    
+    '''
     
     fig = plt.figure()
     ax = fig.gca(projection='3d')
     X, Y, Z = axes3d.get_test_data(0.05)
     cset = ax.contour(X, Y, Z, extend3d=True)
     ax.clabel(cset, fontsize=9, inline=1)
-    
-    plt.show()
     '''
+    plt.show()
+    
     print 'I quit'
     exit()
