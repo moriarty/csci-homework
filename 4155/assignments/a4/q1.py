@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Input Data
-DATA_FILE = '/Users/alex/Downloads/A4Q1_data.npy'
+DATA_FILE = 'A4Q1_data.npy'
 
 MAX_ITR = 300   # chosen arbitrarily
 ALPHA = 0.05     # chosen arbitrarily
