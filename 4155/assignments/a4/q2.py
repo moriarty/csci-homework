@@ -22,7 +22,6 @@ Test = np.load(DATA_TEST_FILE)
 
 clf = SVC()
 clf.fit(Training, Labels)
-print clf.score(Training, Labels)
 
 fig1 = plt.figure()
 ax1 = fig1.add_subplot(111, projection='3d')
@@ -41,7 +40,4 @@ for i in np.arange(Test[:,0].size):
     else:
         ax2.scatter(Test[i][0], Test[i][1], Test[i][2], c='b', marker='^')            
 
-print Test[0]
-
-print clf.predict(Test[0])
 plt.show()

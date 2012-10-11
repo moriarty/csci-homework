@@ -16,7 +16,7 @@ xlabel('Age in years')
 % Gradient descent
 x = [ones(m, 1) x]; 
 theta = zeros(size(x(1,:)))';
-MAX_ITR = 100;
+MAX_ITR = 300;
 alpha = 0.05;
 
 for num_iterations = 1:MAX_ITR
@@ -32,8 +32,8 @@ plot(x(:,2), x*theta, '-')
 legend('Data', 'Regression')
 hold off 
 
-% value for X = 10
-predict = [1, 10] *theta
+% value for X = 20
+predict = [1, 20] *theta
 
 
 theta0_vals = linspace(-10, 20, 100);

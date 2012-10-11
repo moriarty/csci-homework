@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # Input Data
 DATA_FILE = 'A4Q1_data.npy'
 
-MAX_ITR = 300   # chosen arbitrarily
+MAX_ITR = 200   # chosen arbitrarily
 ALPHA = 0.05     # chosen arbitrarily
 # From experiments ALPHA must be at least 0.05
 
@@ -20,17 +20,32 @@ Data = np.load(DATA_FILE)
 X = Data[0,:]
 Y = Data[1,:]
 
-plt.plot(X,Y,'o')
+fig1 = plt.figure()
+ax1 = fig1.add_subplot(111)
+ax1.plot(X,Y,'o')
 
 m = float(Y.size)
-# add a column of ones to X
+# add a column of ones to X to allow for matrix math
 X = np.c_[np.ones(m), X]
 # initialize theta to zeros
 theta = np.zeros(X[0,:].size)
+gvals = np.zeros([MAX_ITR,2])
+err = np.zeros([MAX_ITR,1])
 
 for i in np.arange(MAX_ITR):
     grad = np.dot(1/m*X.T,np.dot(X,theta)-Y)
     theta = theta - np.dot(ALPHA, grad)
+    gvals[i] = grad
 
-plt.plot(X[:,1], np.dot(X,theta), '-')
+R = np.c_[np.ones(MAX_ITR)*gvals[MAX_ITR-1][0], np.ones(MAX_ITR)*gvals[MAX_ITR-1][1]]
+
+err = np.sqrt((R[:,0]-gvals[:,0])**2 + (R[:,1]-gvals[:,1])**2)
+err = np.c_[np.arange(MAX_ITR)+np.ones(MAX_ITR), err]
+
+print theta
+
+ax1.plot(X[:,1], np.dot(X,theta), '-')
+fig2 = plt.figure()
+ax2 = fig2.add_subplot(111)
+ax2.plot(err[:,0],err[:,1],'.')
 plt.show()
