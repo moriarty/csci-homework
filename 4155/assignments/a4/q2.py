@@ -31,13 +31,17 @@ for i in np.arange(Training[:,0].size):
     else:
         ax1.scatter(Training[i][0], Training[i][1], Training[i][2], c='b', marker='^')            
 
-
+myLabels = np.zeros(Test[:,0].size)
 fig2 = plt.figure()
 ax2 = fig2.add_subplot(111, projection='3d')
 for i in np.arange(Test[:,0].size):
-    if clf.predict(Test[i]) == 0:
+    myLabels[i] = clf.predict(Test[i])
+    if myLabels[i] == 0:
         ax2.scatter(Test[i][0], Test[i][1], Test[i][2], c='r', marker='o')
     else:
-        ax2.scatter(Test[i][0], Test[i][1], Test[i][2], c='b', marker='^')            
+        ax2.scatter(Test[i][0], Test[i][1], Test[i][2], c='b', marker='^')
+
+#print clf.score(Test, myLabels)
+np.save('myLabels.npy', myLabels)
 
 plt.show()
