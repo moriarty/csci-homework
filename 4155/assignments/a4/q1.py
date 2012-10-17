@@ -40,6 +40,7 @@ for i in np.arange(MAX_ITR):
 # What is the guess for x = 20?
 v20 = np.dot([1, 20],theta)
 print "the guess for x=20 is ",v20
+print "the regression line is y"
 
 R = np.c_[np.ones(MAX_ITR)*gvals[MAX_ITR-1][0], np.ones(MAX_ITR)*gvals[MAX_ITR-1][1]]
 err = np.sqrt((R[:,0]-gvals[:,0])**2 + (R[:,1]-gvals[:,1])**2)
@@ -55,30 +56,4 @@ plt.legend([p1a, p1b, p1c], ["Data","Reg","Prediction"], loc=4, borderaxespad=1.
 fig2 = plt.figure()
 ax2 = fig2.add_subplot(111)
 ax2.plot(err[:,0],err[:,1],'.')
-
-'''
-
-theta0_vals = np.linspace(-10, 20, 100);
-theta1_vals = np.linspace(0, 6, 100);
-
-J_vals = np.zeros((theta0_vals.size, theta1_vals.size));
-
-for i in np.arange(theta0_vals.size)
-	for j in np.arange(theta1_vals.size)
-		t = [theta0_vals(i); theta1_vals(j)];    
-		J_vals(i,j) = (0.5/m) .* (x * t - y)' * (x * t - y);
-    end
-end
-
-J_vals = J_vals'
-% Surface plot
-figure;
-surf(theta0_vals, theta1_vals, J_vals)
-xlabel('\theta_0'); ylabel('\theta_1');
-
-% Contour plot
-figure;
-contour(theta0_vals, theta1_vals, J_vals , linspace(0, 50,50))
-xlabel('\theta_0'); ylabel('\theta_1');
-'''
 plt.show()
