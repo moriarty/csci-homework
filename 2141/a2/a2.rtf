@@ -1,0 +1,210 @@
+{\rtf1\ansi\deff3\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset128 Liberation Serif{\*\falt Times New Roman};}{\f4\fswiss\fprq2\fcharset128 Liberation Sans{\*\falt Arial};}{\f5\fmodern\fprq1\fcharset128 DejaVu Sans Mono;}{\f6\fnil\fprq2\fcharset128 WenQuanYi Micro Hei;}{\f7\fmodern\fprq1\fcharset128 WenQuanYi Micro Hei;}{\f8\fnil\fprq2\fcharset128 Lohit Hindi;}{\f9\fnil\fprq0\fcharset128 Lohit Hindi;}{\f10\fmodern\fprq1\fcharset128 Lohit Hindi;}}
+{\colortbl;\red0\green0\blue0;\red128\green128\blue128;}
+{\stylesheet{\s0\snext0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\cf0\kerning1\hich\af6\langfe2052\dbch\af8\afs24\alang1081\loch\f3\fs24\lang4105 Normal;}
+{\s15\sbasedon0\snext16\sb240\sa120\keepn\hich\af6\dbch\af8\afs28\loch\f4\fs28 Heading;}
+{\s16\sbasedon0\snext16\sb0\sa120 Text body;}
+{\s17\sbasedon16\snext17\sb0\sa120\dbch\af9 List;}
+{\s18\sbasedon0\snext18\sb120\sa120\noline\i\dbch\af9\afs24\ai\fs24 Caption;}
+{\s19\sbasedon0\snext19\noline\dbch\af9 Index;}
+{\s20\sbasedon0\snext20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20 Preformatted Text;}
+{\s21\sbasedon0\snext16\sb0\sa283\brdrb\brdrdb\brdrw1\brdrcf2\brsp0\noline\afs12\fs12 Horizontal Line;}
+}{\info{\author Alexander Moriarty}{\creatim\yr2012\mo10\dy5\hr14\min0}{\revtim\yr0\mo0\dy0\hr0\min0}{\printim\yr0\mo0\dy0\hr0\min0}{\comment LibreOffice}{\vern3500}}\deftab709
+
+{\*\pgdsctbl
+{\pgdsc0\pgdscuse195\pgwsxn12240\pghsxn15840\marglsxn1134\margrsxn1134\margtsxn1134\margbsxn1134\pgdscnxt0 Default;}}
+\formshade\paperh15840\paperw12240\margl1134\margr1134\margt1134\margb1134\sectd\sbknone\sectunlocked1\pgndec\pgwsxn12240\pghsxn15840\marglsxn1134\margrsxn1134\margtsxn1134\margbsxn1134\ftnbj\ftnstart1\ftnrstcont\ftnnar\aenddoc\aftnrstcont\aftnstart1\aftnnrlc
+\pgndec\pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+Q1) Design an ER-diagram to respresent a set of customers and a set of accounts in some bank as well as the relationship between these two sets. Each customer is described by a name, address, phone, and (unique) SIN number. Each account is described by a (unique) number and a type (e.g, checking, saving and so forth). Indicate the multiplicity of the relationship between these two sets (e.g., whether one-one, many-one or many-many) on the ER-diagram assuming no restriction on the associations in this relationship. (Note the name of the bank is not important to this question and need not be included in the diagram.)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+[customer]\uc3 \u8212\'e2\'80\'94(*) : where * = cname, caddress, cphone, sin\uc1 }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+|1}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+<has a>}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+|M}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+[account]-(*) : where * = anum, atype, }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+Q2) Modify and redraw the ER-diagram of the above question after adding}{\rtlch \ltrch\loch
+ }{\rtlch \ltrch\loch\fs24
+the following changes.}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+a) Each customer can own only one account and each account is owned by only one customer.}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+b) Each address is divided into 3 parts: street, city and province. }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+(Hint: Note under ER-modeling, each attribute is supposed to be an atomic, indivisible, value. Thus, if we treat address as one part, it can be represented by a single attribute, and if we split it into 3 parts, each of them can be treated as an attribute.)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+[address]-(*) : where * = astreet, acity, aprovince}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+|1}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+<lives at>}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+|1 }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+[customer]\uc3 \u8212\'e2\'80\'94(*) : where * = cname, cphone, csin\uc1 }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+|1}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+<has a>}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+|1}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+[account]-(*) : where * = anum, atype, }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+Q3)  Convert each ER-diagram defined below into an equivalent relational database, and underline the key of each relation scheme obtained.}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+     }{\rtlch \ltrch\loch\fs24
+a) The ER-diagram constructed in Q(1).}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+     }{\rtlch \ltrch\loch\fs24
+b) The ER-diagram constructed in Q(2).}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+a)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+step1 :}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+customer(cname, cphone, csin, caccount)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+account(anum, atype)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+step2 :}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+hasA(}{\ul\ulc0\rtlch \ltrch\loch\fs24
+anum}{\rtlch \ltrch\loch\fs24
+, atype, cname, csin, caccount)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+b)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+step1 : }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+address(astreet, acity, aprovince)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+customer(cname, cphone, csin)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+account(anum, atype)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+step2 :}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+livesAt(}{\ul\ulc0\rtlch \ltrch\loch\fs24
+csin}{\rtlch \ltrch\loch\fs24
+, cname, cphone, }{\ulnone\ulc0\rtlch \ltrch\loch\fs24
+astreet, acity, aprovince)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\ulnone\ulc0\rtlch \ltrch\loch\fs24
+hasA(}{\ul\ulc0\rtlch \ltrch\loch\fs24
+anum}{\ulnone\ulc0\rtlch \ltrch\loch\fs24
+, atype, cname, csin)}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\ulnone\ulc0\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\ulnone\ulc0\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+Q4)  Convert each ER-diagram defined below into an equivalent relational design, and underline the key of each scheme obtained.}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+     }{\rtlch \ltrch\loch\fs24
+a) The ER-diagram in Q5 of Assign(1) before breaking the relationship "ParentsOf".}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+     }{\rtlch \ltrch\loch\fs24
+b) The ER-diagram in Q5 of Assign(1) after breaking the relationship "ParentsOf".}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+Q5 of Assign(1) does not involve parentsOf. }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+Q5) Given a set of cities and a set of airlines that serve them, }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+form an ER-diagram to represent which pairs of these cities are }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+connected by which airlines. Use two attributes for cities, one }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+denotes the name of the city and the other denotes the size in }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+population. For Airlines, use only one attribute to denote the }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+name of the airline. Assume in both cases, the attribute name }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+is a key.}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch\fs24
+Q6) Given a set of professors and a set of graduate students in some}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+department, it is required to build an ER-diagram that models the}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+exmination committees assigned to these students. The committe}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+assigned to each student consists of two professors, one of them }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+is designated as the supervisor and the other is a local examiner}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+    }{\rtlch \ltrch\loch\fs24
+(from the same department).}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+         }{\rtlch \ltrch\loch\fs24
+Form an ER-database for this application, assuming that the}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+     }{\rtlch \ltrch\loch\fs24
+only information given for each professor is his name, and his }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+     }{\rtlch \ltrch\loch\fs24
+rank with the name being a key. Similarly, assume the attributes}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+     }{\rtlch \ltrch\loch\fs24
+given for each student are his name, his Id#, and his GPA (i.e., }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+     }{\rtlch \ltrch\loch\fs24
+grade point avergae), where the Id# is a key.}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+ }
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+         }{\rtlch \ltrch\loch\fs24
+Convert your ER-diagram into an equivalent relational design}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch
+      }{\rtlch \ltrch\loch\fs24
+and underline the key of each scheme obtained.}
+\par \pard\plain \s20\sb0\sa0\hich\af7\dbch\af10\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+}
+\par }
