@@ -6,6 +6,7 @@ Gradient decent to learn regression of X,Y data.
 """
 
 import numpy as np
+from sklearn.svm import SVR
 import matplotlib.pyplot as plt
 
 # Input Data
@@ -19,6 +20,17 @@ Data = np.load(DATA_FILE)
 
 X = Data[0,:]
 Y = Data[1,:]
+myX = np.random.randn(10,1)
+myY = np.random.randn(10)
+
+
+print X.shape
+print Y.shape
+
+clf = SVR()
+clf.fit(myX,myY)
+print "the guess by SVR for x=20 is", clf.predict(20)
+
 
 fig1 = plt.figure()
 ax1 = fig1.add_subplot(111)
@@ -39,8 +51,7 @@ for i in np.arange(MAX_ITR):
 
 # What is the guess for x = 20?
 v20 = np.dot([1, 20],theta)
-print "the guess for x=20 is ",v20
-print "the regression line is y"
+print "the guess by GRAD decent for x=20 is ",v20
 
 R = np.c_[np.ones(MAX_ITR)*gvals[MAX_ITR-1][0], np.ones(MAX_ITR)*gvals[MAX_ITR-1][1]]
 err = np.sqrt((R[:,0]-gvals[:,0])**2 + (R[:,1]-gvals[:,1])**2)

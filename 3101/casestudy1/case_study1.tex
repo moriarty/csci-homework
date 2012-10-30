@@ -1,4 +1,4 @@
-\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\documentclass[11pt, oneside]{report}   	% use "amsart" instead of "article" for AMSLaTeX format
 \usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
 \geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
 %\geometry{landscape}                		% Activate for for rotated page geometry
@@ -9,16 +9,20 @@
 \usepackage{setspace}
 
 \title{Case Based Report 1}
-\
 \author{Alexander Moriarty}
 \date{October 18, 2012}							% Activate to display a given date or no date
 \doublespacing
 \begin{document}
 \maketitle
-%\section{}
-%\subsection{}
-\input{section_1}
-\input{section_2}
-
-
+\input{case_study1.toc}
+\chapter{Case 1: Free Software}
+\clearpage
+\input{section1_1}
+\input{section1_2}
+\input{section1_3}
+\chapter{Case 2: Software Licensing}
+\clearpage
+\input{section2_1}
+\input{section2_2}
+\input{section2_3}
 \end{document}  
