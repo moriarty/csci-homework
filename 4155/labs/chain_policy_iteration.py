@@ -17,16 +17,17 @@ Vpi = rand(N); Vpi[0]=-1; Vpi[N-1]=1
 
 for iter in range(10):
     # Estimate V for this policy using TD learning
-    '''for i in range(100):
+    for i in range(100):
         for s in range(1,N-1):
             snext  = s-1+2*policy[s]
             sother = s+1-2*policy[s]
             Vpi[s] = r[s]+gamma*(P*Vpi[snext]+(1-P)*Vpi[sother])
-    '''
-    for s in range(1,N-1):
-    	Tpi
+    
+    #for s in range(1,N-1):
+    #	Tpi
     #Updating policy
     for s in range(1,N-1):
         policy[s] = argmax([Vpi[s-1],Vpi[s+1]])
 print policy     
+print Vpi
 plot(Vpi); show()

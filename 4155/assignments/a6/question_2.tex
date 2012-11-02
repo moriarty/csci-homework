@@ -1,0 +1,15 @@
+\begin{center}
+Train the Lego tribot to move forward close a wall without running into it.
+
+Please submit a paragraph describing your experience.
+\end{center}
+
+To move towards the wall using reinforcement learning, we started with the equations given in the manuscript, and experimented until we were satisfied. We divided the Ultrasonic sensor output into N states. $N*n = 256$ we require $n$ to calculate which state we're in using integer division.  The state we're in is given by the ultrasonic sample value divided by n. Because of this method of dividing the states, our robot will not get close enough to activate the touch sensor, however, the touch sensor will still add negative reward.
+
+Once we've deciced an action we execute this action until the state changes using:
+\begin{verbatim}
+while s == u.get_sample()/n and s is not 0: sleep(0.1)
+\end{verbatim}
+The sleep is required because of the NXT limitations. Without waiting we recieve i2c errors. 
+
+We also experiemented in different ways in updating the policies. This is not true policy iteration becuase I did not want so many loops, but it does learn and update it's policies. Becuase we need to wait for the robot to move when changing states, running multipe loops could take a long time. Our simplified method works majority of the time.
