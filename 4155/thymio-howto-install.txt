@@ -1,0 +1,34 @@
+roscd 
+mkdir thymio
+
+rosws set thymio
+rosws update thymio
+
+# Source your setup in all open terminal windows or close and re open
+# something like: source /home/alex/workspace/fuerte/setup.sh
+
+# Doxygen is required, if latex is installed from source use no-install-recommends
+sudo apt-get install doxygen --no-install-recommends
+
+# There are lots of depends, use -s to simulate and install the needed ones
+sudo apt-get install -s libboost-dev libqt4-dev qt4-dev-tools libqwt5-qt4-dev libudev-dev cmake g++ subversion git
+
+# install the needed ones from above
+sudo apt-get install qt4-dev-tools
+
+sudo apt-get install libudev0 libudev-dev
+
+cd thymio
+
+git clone git://github.com/ethz-asl/ros-aseba
+
+# get the "upstream projects"
+git clone git://github.com/aseba-community/dashel.git ./ros-aseba/dashel/upstream_src/
+
+git clone git://github.com/aseba-community/aseba.git ./ros-aseba/aseba/upstream_src/
+
+cd ros-aseba
+rosmake
+
+# allow non sudo to talk to thymio
+sudo chmod a+rw /dev/ttyACM0

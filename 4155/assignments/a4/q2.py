@@ -26,6 +26,11 @@ Test = np.load(DATA_TEST_FILE)
 
 ''' This is important. It's also magic. '''
 clf = SVC()
+#print shape(Training)
+print shape(Labels)
+
+#print Labels
+#print Training[0:3]
 clf.fit(Training, Labels)
 
 ''' This is just graphing the Data '''
