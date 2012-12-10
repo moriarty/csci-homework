@@ -1,0 +1,69 @@
+\documentclass[letterpaper, 12 pt, conference]{ieeeconf}
+
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{subfigure, siunitx, url}
+\usepackage{amsmath, amssymb, bbm, nicefrac}
+\usepackage{pifont}
+%\usepackage{tikz}
+%\usetikzlibrary{shapes,arrows,fit,trees,positioning,chains,calc,intersections}
+
+%%% abbreviations to use (guarantee correct spaces between characters)
+\newcommand{\ie}{i.e.\ }
+\newcommand{\Ie}{I.e.\ }
+\newcommand{\eg}{e.g.\ }
+\newcommand{\Eg}{E.g.\ }
+\newcommand{\cf}{cf.}
+
+%%% commands for referencing (guarantee homogeneous writing style)
+\newcommand{\referenceChapter}[1]{Chapter \ref{#1}}
+\newcommand{\referenceSection}[1]{Section \ref{#1}}
+\newcommand{\referenceFigure}[1]{Figure \ref{#1}}
+\newcommand{\referenceEquation}[1]{Eq.~(\ref{#1})}
+\newcommand{\referenceTable}[1]{Table \ref{#1}}
+\newcommand{\referenceListing}[1]{code listing\ref{#1}}
+\newcommand{\referenceAlgorithm}[1]{Algorithm \ref{#1}}
+
+\title{\LARGE \bf
+Towards the Goal \\ \small Machine Learning 4155 Final Project Paper
+}
+
+
+\author{Alexander Moriarty\\~\\~
+		Faculty of Computer Science, Dalhousie University\\ 
+        6050 University Ave, Halifax, Nova Scotia, Canada\\
+        {\tt\small moriarty@cs.dal.ca}
+}
+
+\begin{document}
+
+\maketitle
+
+\input{abstract}
+\input{intro}
+\input{platform}
+\input{controller}
+\input{perception}
+\input{avoid}
+\input{learn}
+\input{future}
+\input{conclusion}
+
+
+%%% REFERENCES %%%
+\bibliographystyle{plain}
+\bibliography{finalpaperrefs}
+%\bibliographystyle{splncs}
+
+
+
+%%% APPENDIX %%%
+
+\end{document}
+
+
+
+
+
