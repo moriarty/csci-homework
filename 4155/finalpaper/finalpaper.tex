@@ -1,5 +1,10 @@
-\documentclass[letterpaper, 12 pt, conference]{ieeeconf}
+\documentclass[letterpaper, 11 pt, conference]{ieeeconf}
 
+\makeatletter
+\let\NAT@parse\undefined
+\makeatother
+
+\usepackage{natbib}
 \usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
@@ -7,7 +12,7 @@
 \usepackage{subfigure, siunitx, url}
 \usepackage{amsmath, amssymb, bbm, nicefrac}
 \usepackage{pifont}
-%\usepackage{tikz}
+\usepackage{tikz}
 %\usetikzlibrary{shapes,arrows,fit,trees,positioning,chains,calc,intersections}
 
 %%% abbreviations to use (guarantee correct spaces between characters)
