@@ -1,0 +1,1 @@
+cat /etc/passwd | nawk -F: '{print $7}' | sort | uniq | sed 1d

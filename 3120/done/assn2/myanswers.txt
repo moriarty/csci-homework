@@ -1,0 +1,21 @@
+Assignment 2:	CSCI 3120		Alex Moriarty 		CSID: moriarty
+
+PART 3.2
+Questions following steps 1-13:
+
+1.	Examining the table generated in Step 8; the value of Key for myrun_1 is FCFS.
+2.	Examining the table generated in Step 8; the value of CPU Utilization for myrun_2 is .96158.
+3.	Examining the table generated in Step 8; myrun_2 has the higher Throughput value.
+4.	The SJF algorithm has the shorter average Turnaround Time.
+5.	The FCFS algorithm has the longer maximum Turnaround Time. (but it is very close: 0.15)
+
+PART 3.3
+1.	They were the same because we changed the values of the duration and io from uniform distribution to constant.
+2.	When the value of cpu burst is changed the FCFS and SJF algorithms schedule processes differently.
+3.	The second time process 6 gets the CPU, I/O is part of the convoy, This is why there is so much waiting.
+4.	The RR 1 scheduling algorithm had the most context switches; With 1056 CPU entries.
+5.	From the data I collected, it can be said that PSJF has more context switches than SJF.
+6.	From the data I collected, it can be said that as the time quantime increases: the average waiting time decreases.
+7.	Adding line 'A: run myrun algorithm RR 25 key "RR 25"' will cause the RR scheduling to behave the same as FCFS
+
+

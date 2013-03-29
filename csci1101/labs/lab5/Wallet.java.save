@@ -1,0 +1,33 @@
+/**
+ * Alex Moriarty
+ * Lab  cs1101  
+ * 2009/2/10
+ */
+
+public class Wallet
+{
+	private double totalValue = 0;
+	
+	public Wallet(){
+
+	}
+	public Wallet(double value){
+		if (value < 0){
+			return;
+		}else
+			totalValue += value;	
+	}
+	public void addCoin(Coin coin){
+		totalValue += coin.getValue();
+	}
+	public void addCoin(Coin coin, int numOf){
+		
+		total	
+	}
+	public void removeCoin(Coin coin){
+		
+	}
+	public void removeCoin(Coin coin, int numOf){
+		
+	}
+}

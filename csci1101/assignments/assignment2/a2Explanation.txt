@@ -1,0 +1,46 @@
+CSCI 1101
+Computer Science II
+
+Assignment No. 2
+Due: February 13, 2009
+
+
+1.	Parking Ticket Simulator
+For this question you will design a set of classes that work together to simulate a police officer issuing a parking ticket. You should design the following classes:
+
+•	The ParkedCar Class: This class should simulate a parked car. The car has a make, model, color, license number.
+•	The ParkingMeter Class: This class should simulate a parking meter. The class has two parameters – the number of minutes of parking time that has been purchased; if the parking meter is expired, the number of minutes by which the purchased time has exceeded. (Normally parking meters just indicate whether the parking meter has expired, but for this example, assume that the parking meter is sophisticated enough to indicate the exceeded time).
+•	The ParkingTicket Class: This class should simulate a parking ticket. The class should report 
+-	the make, model, color and license number of the illegally parked car.
+-	the amount of fine, which is $25 for the first hour or part of an hour that the car is illegally parked, plus $10 for every additional hour or part of an hour that the car is illegally parked.
+-	the name and badge number of the police officer issuing the ticket.
+•	The PoliceOfficer Class: This class should simulate a police officer inspecting parked cars. The class
+-	has the officer’s name and badge number
+-	examines the parking meter object and determines whether the car’s time has expired
+-	Issues a parking ticket (generates a ParkingTicket object) if the car’s time has expired.
+Include appropriate instance variables and appropriate methods in each class.
+
+Write a program that demonstrates how these classes collaborate.
+
+…/over
+
+
+
+2.	Extension of the ClockDisplay
+
+Modify the ClockDisplay class that we discussed in the lectures (Example 3, Module 2), so that it displays seconds in addition to hours and minutes:
+
+
+
+Include an IncrementSecond method that increments the seconds and an IncrementHour method that increments the hours. This is in addition to the IncrementMinute method which was already implemented. Use a 24 hour clock format.
+
+Test the class.
+
+Bonus question: Modify the above program so that it displays in a 12 hour clock format: 
+
+
+
+Be sure to test the following cases:
+a)	Incrementing into the next minute
+b)	Incrementing into the next hour
+c)	Incrementing into the next day (i.e., 11:59:59 p.m. to 12:00:00 a.m.)

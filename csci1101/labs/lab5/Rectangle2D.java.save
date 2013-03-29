@@ -1,0 +1,29 @@
+/**
+ * @(#)Rectangle2D.java
+ *
+ *
+ * @author 
+ * @version 1.00 2009/2/11
+ */
+
+
+public class Rectangle2D {
+	private Point topLeft;
+	private Point bottomRight;
+	
+//	public Rectangle2D() {
+//	}
+	public Rectangle2d(Point topLeft, Point bottomRight){
+		setTopLeft(topLeft);
+		setBottomRight(bottomRight);
+	}    
+	public void setTopLeft(Point topLeft){
+		this.topLeft = topLeft;
+	} 
+	public void setBottomRight(Point bottomRight){
+		this.bottomRight = bottomRight;
+	}
+	public Point getTopLeft(
+
+
+}

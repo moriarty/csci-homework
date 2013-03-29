@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html><head>
+
+<!--Converted with LaTeX2HTML 99.1 release (March 30, 1999)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+
+
+<title>assign5</title>
+<meta name="description" content="assign5">
+<meta name="keywords" content="assign5">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Generator" content="LaTeX2HTML v99.1 release">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="a5_files/assign5.css">
+
+</head><body bgcolor="#ffffff">
+
+<p>
+</p><div align="CENTER"><b> DEPARTMENT OF ENGINEERING MATHEMATICS
+<br>
+COMPUTER PROGRAMMING
+<br>
+ENGM 2081
+</b></div>
+
+<p>
+<b> ASSIGNMENT # 5</b>
+
+</p><p>
+<b> Due Date: Tuesday October 27, 2009, 1:00pm</b>
+
+</p><p>
+
+</p><ol>
+<li>Write a program <tt> sumcubes.c</tt> which reads floating point numbers from
+   the file <a name="tex2html1" href="http://www.engmath.dal.ca/courses/engm2081/assign5/sumcubes.in">sumcubes.in</a>
+and computes
+   the sum of the cubes of the numbers. The program should print out the number
+   of floats read as well as the sum of cubes. For example, if the file
+   consists of:
+
+<p>
+</p><pre>
+  1.0
+  3.0
+  0.5
+
+Then the output should be:
+  3 floats were read
+  the sum of cubes is 28.125
+</pre>
+
+<p>
+</p><pre>
+/* File: sumcubes.c
+   This functions computes the sum of the cubes of numbers read from 
+   a file. 
+   
+   Programmer: your name             Date:
+   Course: ENGM 2081                 Instructor: Fenton/Phillips
+*/
+   
+#include &lt;stdio.h&gt;
+
+int main()
+{
+   /* you fill in here */
+   
+   system("pause");
+   return 0;
+}
+</pre>
+
+<p>
+</p></li><li>Complete the program <tt> vowels.c</tt> as
+   described in the comments.  Use the input file
+   <a name="tex2html2" href="http://www.engmath.dal.ca/courses/engm2081/assign5/vowels.in">vowels.in</a>
+<p>
+</p><pre>
+/* File: vowels.c
+
+   Programmer:                      Date:
+   Course: engm2081                 Instructors: Fenton/Phillips
+
+   This program counts the number times each of the of the vowels 
+   occurs in a file.  
+   
+   The vowels are the characters a, e, i, o, and u.  The program does not
+   distinguish between upper and lower case characters.
+   
+   After counting the number of times each vowel occurs the program makes a
+   "sideways" histogram of its results.
+
+   Sample output:
+   
+   a: 48: ************************************************
+   e: 49: *************************************************
+   i: 48: ************************************************
+   o: 42: ******************************************
+   u: 17: *****************
+*/
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+   FILE* infile = fopen("vowels.in", "r");
+   FILE* outfile = fopen("vowels.out", "w");
+
+   /* You fill in here */
+
+   return 0;
+}
+</pre>
+
+<p>
+</p></li><li>A computer store sells ethernet cable in 25 and 50 foot lengths,
+   with store codes E25 and E50, each costing $18 and $30, respectively.
+   They also sell USB cables in 6 and 10 foot lengths, with store
+   codes U6 and U10, each costing $24 and $36, respectively.   
+   Write a program which takes as input from the keyboard the store
+   code and the number of cables desired and displays the cost of  
+   that number of cables and a running total of sales for the order.
+   An order is finished with the store code Q is entered (at which  
+   point your program quits).
+
+<p>
+For example the following input and output might be seen:
+
+</p><p>
+</p><pre>
+   Enter store code and quantity: E50 6
+   6 Ethernet cables (50 foot) costs $180.00  (total = $180.00)
+   Enter store code and quantity: U6 4
+   4 USB cables (6 foot) costs $96.00  (total = $276.00)
+   Enter store code and quantity: Q
+</pre>
+
+<p>
+For marking purposes capture your screen output given the the above
+   input.
+
+</p><p>
+</p><pre>
+/* File: cables.c
+
+   Programmer:                       Date:
+   Course: ENGM 2081                 Instructor: Fenton/Phillips
+*/    
+#include &lt;stdio.h&gt;
+
+int main()
+{
+   char type; /* E or U or Q */
+   int length, quantity;
+   float total=0.0, cost;
+
+   /* you fill in here */
+
+   system("pause");      
+   return 0;
+}
+</pre>
+
+<p>
+</p></li><li>A lumber company needs to create a table of the engineering properties
+   of its rectangular cross section lumber.  The dimensions of the wood are
+   given as base and height in inches.  The table is to include the
+   following information:
+
+<p>
+<br></p><p></p>
+<div align="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+\mbox{cross sectional area} = \mbox{base} \times \mbox{height}
+\end{displaymath}
+ -->
+
+
+<img src="a5_files/img1.gif" alt="\begin{displaymath}\mbox{cross sectional area} = \mbox{base} \times \mbox{height} \end{displaymath}" width="247" height="27" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+
+<p>
+<br></p><p></p>
+<div align="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+\mbox{moment of inertia} = \frac{\mbox{base} \times \mbox{height}^{3}}
+                                 {12.0}
+\end{displaymath}
+ -->
+
+
+<img src="a5_files/img2.gif" alt="\begin{displaymath}\mbox{moment of inertia} = \frac{\mbox{base} \times \mbox{height}^{3}}
+{12.0} \end{displaymath}" width="247" height="43" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+
+<p>
+<br></p><p></p>
+<div align="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+\mbox{section modulus} = \frac{\mbox{base} \times \mbox{height}^{2}}
+                                 {6.0}
+\end{displaymath}
+ -->
+
+
+<img src="a5_files/img3.gif" alt="\begin{displaymath}\mbox{section modulus} = \frac{\mbox{base} \times \mbox{height}^{2}}
+{6.0} \end{displaymath}" width="235" height="43" border="0">
+</div>
+<br clear="ALL">
+<p></p>
+
+<p>
+The company makes lumber with base sizes 2, 4, 6, 8, and 10 inches.  The
+   height sizes are 2, 4, 6, 8, 10, and 12 inches.
+
+</p><p>
+
+</p><p>
+<br>
+
+</p><p>
+Write a program to produce a table with appropriate headings to show
+   these values and the computed engineering properties.  Part of the table
+   is shown below:
+
+</p><p>
+</p><pre>
+Lumber Size     Cross sectional     Moment of       Section
+                    Area            Inertia         Modulus
+------------------------------------------------------------
+ 2 x  2             4.00             1.33             1.33
+ 2 x  4             8.00            10.67             5.33
+ 2 x  6            12.00            36.00            12.00
+ 2 x  8            16.00            85.33            21.33
+ 2 x 10            20.00           166.67            33.33
+ 2 x 12            24.00           288.00            48.00
+ 4 x  2             8.00             2.67             2.67
+ 4 x  4            16.00            21.33            10.67
+ 4 x  6            24.00            72.00            24.00
+ 4 x  8            32.00           170.67            42.67
+ 4 x 10            40.00           333.33            66.67
+ 4 x 12            48.00           576.00            96.00
+   .
+   .
+   .
+</pre>
+
+<p>
+<b> Hints:</b>
+   
+</p><ul>
+<li>One way to print the header is to copy it from the webpage and put
+   <pre>
+      fprintf(outfile, "the line as it appears in the webpage" );
+</pre>   
+   for each line of the header
+
+<p>
+</p></li><li>A good format for the fprintf statement is:
+   <pre>
+      fprintf(outfile, "%2d x %2d %16.2f %16.2f %16.2f\n", base, height, 
+                 xarea, inertia, modulus);
+</pre>
+
+<p>
+</p></li><li>Use nested loops to print the table.
+
+<p>
+</p></li></ul>
+
+<p>
+</p><pre>
+/* File: lumber.c
+
+   Programmer:                       Date:
+   Course: ENGM2081                  Instructor: Fenton/Phillips
+   
+   This program prints out a table of engineering properties of various
+   sizes of lumber */
+
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main()
+{
+   FILE* outfile = fopen("lumber.out", "w");
+
+   /* you fill in here */
+   
+   return 0;
+}
+</pre>
+
+<p>
+</p></li></ol>
+
+<p>
+<br></p><hr>
+<address>
+<i>Fenton/Phillips</i>
+<br><i>2009-10-18</i>
+</address>
+</body></html>

@@ -1,0 +1,38 @@
+/** File approx.c (a2.3.c)
+*  Uses 5 terms of the power series expansion of exp(x) to 
+*  approximate the function
+*
+*  Programmer: Alex Moriarty         Date:
+*  Course: ENGM 2081                 Instructors: Fenton/Phillips
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+
+  float x, actual, approx1, approx2, err1, err2;
+
+  /* you fill in here */
+  printf("Please insert a value for x: ");
+  scanf("%f", &x);
+  actual = exp(-x);
+  /*method 1*/
+  approx1 = 1 - x + pow(x,2)/factorial(2) - pow(x,3)/factorial(3) + pow(x,4)/factorial(4) ;
+
+  printf("%f\n", approx1);
+
+  return 0;
+}
+
+int factorial(int n){
+  if ( n <= 1 )
+    return 1;
+  else
+    return n * factorial( n - 1);
+}
+
+float firstMethod( float x){
+
+}

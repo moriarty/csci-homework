@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#***********************
+# Alex Moriarty, B00317947
+# moriarty	
+# CSCI-2132: Assignment 2, Question 1
+# "My Grep Function"
+#***********************
+
+mygrep()
+{
+if [ $# -lt 2 ]
+then
+	echo Usage: $0 pattern files
+else
+	word=$1
+	shift
+	while [ $# -ge 1 ]
+	do
+		sed -n "/$word/p" $1
+		shift
+	done
+fi
+}

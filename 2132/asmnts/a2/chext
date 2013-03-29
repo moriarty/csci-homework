@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#****************
+# Alex Moriarty, B00317947
+# moriarty
+# CSCI-2132: Assignment 2, Question 2
+# "Change Extention Script"
+#****************
+
+if [ $# -lt 3 ]; then
+	echo Usage: $0 oldEXT newEXT Files
+	exit 1
+else
+	old=$1
+	new=$2
+	shift
+	shift
+	while [ $# -ge 1 ]
+	do
+		file=$1
+		newName=`echo $file | sed "s/.$old/.$new/"`
+		mv $file $newName
+		shift
+	done
+	exit 0
+fi

@@ -1,0 +1,9 @@
+a5.1.c = "sumcubes.c"
+	reads a5.1.in = "sumcubes.in"
+a5.2.c = "vowels.c"
+	reads a5.2.in = "vowels.in"
+	writes a5.2.out = "vowels.out"
+a5.3.c = "cables.c"
+	writes a5.3.out 
+a5.4.c = "lumber.c"
+	writes a5.4.out = "lumber.out"

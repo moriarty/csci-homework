@@ -1,0 +1,203 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf540
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww20400\viewh13700\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 ############# ENGM Assignment 3  ######## ALEX MORIARTY  ###  B00317947\
+\
+moriarty@bluenose:~/engi/engm2081/a3$ more *.c\
+\
+::::::::::::::\
+a3.1.c\
+::::::::::::::\
+\
+/**\
+*  File: a3.1.c (category.c)\
+*  \
+*  Programmer: Alex Moriarty	Date: October 2, 2009\
+*  Course: ENGM 2081		Instructor: Fenton/Phillips\
+*/\
+\
+#include <stdio.h>\
+#include <stdlib.h>\
+\
+int main(void)\{\
+	FILE *fout = fopen("a3.1.out","a");\
+	float price;\
+	\
+	printf("Enter the price of the item: ");\
+	scanf("%f", &price);\
+	\
+	printf("\\n\\tYou entered %.2f\\n", price);	\
+\
+	if (price > 0 && price < 1)\{\
+		fprintf(fout, "price = %.2f,\\tcategory = A\\n", &price);\
+	\} else if (price >=1 && price < 5)\{\
+		fprintf(fout, "price = %.2f,\\tcategory = B\\n", &price);\
+	\} else if (price >=5 && price <10)\{\
+		fprintf(fout, "price = %.2f,\\tcategory = C\\n", &price);\
+	\} else if (price >=10 && price < 20)\{\
+		fprintf(fout, "price = %.2f,\\tcategory = D\\n", &price);\
+	\} else if (price >=20)\{\
+		fprintf(fout, "price = %.2f,\\tcategory = E\\n", &price);\
+	\} else\
+	printf("invalid price");\
+	return 0;	\
+\}\
+\
+::::::::::::::\
+a3.2.c\
+::::::::::::::\
+\
+/**\
+*  File: a3.2.c (earthquake.c)\
+*\
+*  Programmer: Alex Moriarty	Date: Oct 2, 2009\
+*  Course: ENGM 2081		Intructor: Fenton/Phillips\
+*/\
+\
+#include<stdio.h>\
+#include<stdlib.h>\
+\
+\
+int main(void)\{\
+	\
+	FILE *fout = fopen("a3.2.out","a");\
+	float magnitude;\
+	\
+	printf("Please enter the Richter scale value: ");\
+	scanf("%f", &magnitude);	\
+	printf("\\tYou entered: %.1f\\n", magnitude);\
+\
+	if( magnitude < 5.0)\{\
+		fprintf(fout,"For Richter Scale number %.1f there is little or no damage\\n", magnitude);\
+	\} else if(magnitude <5.5)\{\
+		fprintf(fout,"For Richter Scale number %.1f there is some damage\\n", magnitude);\
+	\} else if(magnitude <6.5)\{\
+		fprintf(fout,"For Richter Scale number %.1f there is serious damage\\n", magnitude);\
+	\} else if(magnitude <7.5)\{\
+		fprintf(fout,"For Richter Scale number %.1f there is a disaster\\n", magnitude);\
+	\} else if(magnitude >= 7.5)\{\
+		fprintf(fout,"For Richter Scale number %.1f there is a catastrophe\\n", magnitude);\
+	\} else\
+	printf("invalid input\\n");\
+\
+	fclose(fout);\
+	return 0;\
+\}\
+\
+::::::::::::::\
+a3.3.c\
+::::::::::::::\
+\
+/**\
+*  File a3.3.c (mempic.c)\
+*	\
+*  Programmer: Alex Moriarty	Date: Oct 2, 2009\
+*  Course: ENGM2081 		Instructor Fenton/Phillips\
+*/\
+\
+#include<stdlib.h>\
+#include<stdio.h>\
+\
+int main(void)\{\
+		\
+	FILE *fout = fopen("a3.3.out","w");\
+	int x=1, y=2, tmp;\
+	int* p = &x;\
+	int* q = &y;\
+	\
+	fprintf(fout,"\\nVariable\\t\\tValue\\t\\tAddress\\n");\
+	fprintf(fout,"-------------------------------------------------\\n");\
+\
+	fprintf(fout,"x\\t\\t\\t%d\\t\\t%u\\n", x, &x);\
+	fprintf(fout,"y\\t\\t\\t%d\\t\\t%u\\n", y, &y);\
+	fprintf(fout,"tmp\\t\\t\\t%d\\t\\t%u\\n", tmp, &tmp);\
+	fprintf(fout,"p\\t\\t\\t%u\\t%u\\n", p, &p);\
+	fprintf(fout,"q\\t\\t\\t%u\\t%u\\n", q, &q);\
+	fprintf(fout,"*p\\t\\t\\t%u\\n", *p);\
+	fprintf(fout,"*q\\t\\t\\t%u\\n", *q);\
+	\
+	fprintf(fout,"\\n-------------------------------------------------\\n");\
+\
+	/*Assignment Statements*/\
+	tmp = *p;\
+	*p = *q;\
+	*q = tmp;\
+\
+	fprintf(fout,"After the assignment statements\\n");\
+	fprintf(fout,"-------------------------------------------------\\n");\
+	fprintf(fout,"Variable\\t\\tValue\\t\\tAddress\\n");\
+\
+	fprintf(fout,"x\\t\\t\\t%d\\t\\t%u\\n", x, &x);\
+            fprintf(fout,"y\\t\\t\\t%d\\t\\t%u\\n", y, &y);\
+            fprintf(fout,"tmp\\t\\t\\t%d\\t\\t%u\\n", tmp, &tmp);\
+            fprintf(fout,"p\\t\\t\\t%u\\t%u\\n", p, &p);\
+            fprintf(fout,"q\\t\\t\\t%u\\t%u\\n", q, &q);\
+            fprintf(fout,"*p\\t\\t\\t%u\\n", *p);\
+            fprintf(fout,"*q\\t\\t\\t%u\\n", *q);\
+\
+	fclose(fout);\
+	return 0;\
+\}\
+\
+############## Compiler Info ##########################\
+\
+moriarty@bluenose:~/engi/engm2081/a3$ gcc -o q1 a3.1.c -lm\
+moriarty@bluenose:~/engi/engm2081/a3$ gcc -o q2 a3.2.c -lm\
+moriarty@bluenose:~/engi/engm2081/a3$ gcc -o q3 a3.3.c -lm\
+\
+############## PROGRAM OUTPUT ####################\
+\
+moriarty@bluenose:~/engi/engm2081/a3$ more *.out\
+\
+::::::::::::::\
+a3.1.out\
+::::::::::::::\
+\
+price = 8.99,	category = C\
+price = 1.99,	category = B\
+price = 3.99,	category = B\
+price = 0.98,	category = A\
+price = 20.99,	category = E\
+price = 15.90,	category = D\
+\
+::::::::::::::\
+a3.2.out\
+::::::::::::::\
+\
+For Richter Scale number 1.0 there is little or no damage\
+For Richter Scale number 5.3 there is some damage\
+For Richter Scale number 7.6 there is a catastrophe\
+For Richter Scale number 6.7 there is a disaster\
+For Richter Scale number 6.0 there is serious damage\
+\
+::::::::::::::\
+a3.3.out\
+::::::::::::::\
+\
+Variable		Value		Address\
+-------------------------------------------------\
+x			1		356219860\
+y			2		356219856\
+tmp			0		356219852\
+p			356219860	356219840\
+q			356219856	356219832\
+*p			1\
+*q			2\
+\
+-------------------------------------------------\
+After the assignment statements\
+-------------------------------------------------\
+Variable		Value		Address\
+x			2		356219860\
+y			1		356219856\
+tmp			1		356219852\
+p			356219860	356219840\
+q			356219856	356219832\
+*p			2\
+*q			1\
+\
+moriarty@bluenose:~/engi/engm2081/a3$ \
+}

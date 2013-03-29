@@ -1,0 +1,14 @@
+/**
+ * Alex Moriarty
+ * Lab 7 bonus cs1101  
+ * 2009/2/10
+ */
+import java.util.ArrayList;
+public class Sentence
+{
+	private ArrayList<Word> sentence;
+	public Sentence(){
+		sentence = new ArrayList<Word>();
+	}
+	public void 
+}

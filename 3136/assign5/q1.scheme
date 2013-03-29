@@ -1,0 +1,8 @@
+(define f (lambda (n)
+	(letrec ((altseries (lambda (n sum)
+	(cond ((<= n 1) sum)
+	(else (altseries (- n 1) (- sum (* (expt -1 n) (/ 1 n)))))
+	))))
+	(cond ((< n 1) 0)
+	(else (altseries n 1)))
+	)))

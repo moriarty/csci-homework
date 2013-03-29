@@ -1,0 +1,69 @@
+moriarty@bluenose:~/engi/engm2081$ more a1.1.c
+/** File threeint.c
+*   Compute the sum and sum of squares of three integers entered by a user
+*         
+*   Programmer: Alex Moriarty         Date: Sept 17th 2009
+*   Course: ENGM 2081                 Instructors: Fenton/Phillips
+*/
+
+#include <stdio.h>
+
+int main(void)
+{
+   int a, b, c, sum1, sum2;
+   
+   printf("Input three integers: ");
+   
+   /* you fill in the rest */
+   scanf("%d%d%d", &a, &b, &c);
+   sum1 = a + b + c ;
+   sum2 = a*a + b*b + c*c ;
+   printf("The sum of the integers %d, %d and %d is: %d", a, b, c, sum1);
+   printf("\nThe sum of the squares of the integers %d, %d and %d is: %d\n", a, b, c, sum2); 
+      
+   //system("pause");
+
+   return 0;
+}
+
+moriarty@bluenose:~/engi/engm2081$ gcc -o q1 a1.1.c -lm 
+moriarty@bluenose:~/engi/engm2081$ q1
+Input three integers: 2 5 8
+The sum of the integers 2, 5 and 8 is: 15
+The sum of the squares of the integers 2, 5 and 8 is: 93
+moriarty@bluenose:~/engi/engm2081$ 
+moriarty@bluenose:~/engi/engm2081$ more a1.2.c
+/** File fuel.c
+*   Converts km/100 L to km/L and miles/gallon
+*         
+*   Programmer: Alex Moriarty         Date: Sept 17 2009
+*   Course: ENGM 2081                 Instructors: Fenton/Phillips
+*/
+
+#include <stdio.h>
+#define CONVERTTOMPG  282.48
+
+int main(void)
+{
+   float lp100km, kmpl, mpg;
+   
+   /* you fill in here */
+   printf("Enter the number of litres per 100km: ");
+   scanf("%f", &lp100km);
+   kmpl = 100 / lp100km;
+   mpg = CONVERTTOMPG / lp100km;
+   printf("km/L = 100/%.1f = %.2f", lp100km, kmpl);
+   printf("\nmi/g = %.2f/%.1f = %.2f\n", CONVERTTOMPG, lp100km, mpg);      
+   //system("pause");
+
+   return 0;
+}
+
+moriarty@bluenose:~/engi/engm2081$ 
+moriarty@bluenose:~/engi/engm2081$ gcc -o q2 a1.2.c -lm 
+moriarty@bluenose:~/engi/engm2081$ q2
+Enter the number of litres per 100km: 9.3
+km/L = 100/9.3 = 10.75
+mi/g = 282.48/9.3 = 30.37
+moriarty@bluenose:~/engi/engm2081$ 
+

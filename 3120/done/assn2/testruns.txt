@@ -1,0 +1,42 @@
+moriarty@bluenose:~/courses/csci/3120/done$ ls
+a2.1.c  a2.2.c  logfile.html  makefile  myanswers.txt
+moriarty@bluenose:~/courses/csci/3120/done$ make
+gcc a2.1.c -o q1
+gcc a2.2.c -o q2
+moriarty@bluenose:~/courses/csci/3120/done$ ./q1 
+
+usage: ./q1 possitive_integer
+
+moriarty@bluenose:~/courses/csci/3120/done$ ./q1 -2
+
+usage: ./q1 possitive_integer
+integer argument must be possitive!
+
+moriarty@bluenose:~/courses/csci/3120/done$ ./q1 2
+0 1 
+moriarty@bluenose:~/courses/csci/3120/done$ ./q1 10
+0 1 1 2 3 5 8 13 21 34 
+moriarty@bluenose:~/courses/csci/3120/done$ ./q1 11
+0 1 1 2 3 5 8 13 21 34 55 
+moriarty@bluenose:~/courses/csci/3120/done$ ./q2
+
+usage: ./q2 possitive_integer
+
+moriarty@bluenose:~/courses/csci/3120/done$ ./q2 1
+0 
+moriarty@bluenose:~/courses/csci/3120/done$ ./q2 5
+0 1 1 2 3 
+moriarty@bluenose:~/courses/csci/3120/done$ ./q2 -2
+
+usage: ./q2 possitive_integer
+integer argument must be possitive!
+
+moriarty@bluenose:~/courses/csci/3120/done$ ./q2 10
+0 1 1 2 3 5 8 13 21 34 
+moriarty@bluenose:~/courses/csci/3120/done$ ./q2 11
+
+usage: ./q2 possitive_integer
+integer must be below 10!
+
+moriarty@bluenose:~/courses/csci/3120/done$ 
+

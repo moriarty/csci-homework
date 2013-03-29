@@ -1,0 +1,72 @@
+1.
+	How do you define an operating system?
+	I define an operating system as the platform that allows me to run programs on my computer.
+	I define an operating system as the program that allows for the use of my system hardware,
+		In a way which is convienent and allows me to be productive. And avoid interacting directly
+		with the system hardware. It is an interface for my computer.
+
+2.	The operating system should allow the user to execute programs.
+	The operating system should handle the I/O with the system hardware.
+	The operating system should handle interupts and avoid "crashing".
+	The operating system should handle task management and CPU time.
+
+3.	The user is generally only interested in what they are doing, and they don't need to be 
+		distracted by all the background tasks that don't require user input.
+	
+	I wouldn't call that an ideal: If I'm running servers I want to know all the processes that
+	are being run on the computer
+		
+4.	When handling errors, exceptions and weighting process priority it is good to have the user
+		seperate from the system tasks
+
+5.	Batch: this type of operating system runs programs as they come in through a queue.
+		They are generally used behind the scenes because they don't like to be interupted,
+		but are very stable at doing certain repetative tasks, like system backups.
+		Generally someone writes the batch files and send them off to be processed, meanwhile they
+		wait for the computer to do process the batch files in sequence.
+	Interactive: this is your typical operating system, it expects lots of interups and IO support.
+		The sustem needs to be able to handle just about anything the user can "throw at it".
+		Generally when a user wants something done, it will do it.
+	Time Sharing: this is your big corprate server, or modern Cloud environment. It must disguise
+		the fact that there are many users on the system all sharing the CPU(s).
+		A time sharing 
+
+
+OUTPUT
+Welcome to Alex's Shell
+Using the PATH: /opt/local/bin:/opt/local/sbin:/sw/bin:/sw/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/X11R6/bin
+-----------------------
+COMMAND --> hello
+hello: Command not found
+COMMAND --> test
+COMMAND --> which test
+/bin/test
+COMMAND --> !!
+1	hello
+2	test
+3	which test
+COMMAND --> erhet wethtj
+erhet: Command not found
+COMMAND --> $wrher
+$wrher: Command not found
+COMMAND --> !!
+1	hello
+2	test
+3	which test
+4	???_?
+5	erhet wethtj
+6	$wrher
+COMMAND --> echo "hello world!"
+"hello world!"
+COMMAND --> history
+1	hello
+2	test
+3	which test
+4	???_?
+5	erhet wethtj
+6	$wrher
+7	????
+8	echo "hello world!"
+COMMAND --> !8
+"hello world!"
+COMMAND --> exit
